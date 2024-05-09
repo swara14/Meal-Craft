@@ -1,0 +1,150 @@
+<!-- random-recipe.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe_title }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+
+        body {
+        font-family: cursive;
+        background-color: #313131;
+        color: white;
+        }
+
+        a {
+        text-decoration: none;
+        }
+
+        li {
+        list-style: none;
+        }
+
+        /* NAVBAR STYLING STARTS */
+        .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #78c0a8;
+        color: #313131;
+        }
+
+        .nav-links a {
+        color: #313131;
+        }
+
+        /* LOGO */
+        .logo {
+        font-size: 25px;
+        }
+
+        /* NAVBAR MENU */
+        .menu {
+        display: flex;
+        gap: 2em;
+        font-size: 18px;
+        }
+
+        /* Button Styles */
+        .random-recipes {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .generate-button {
+            background-color: #f5aa28;
+            border: none;
+            color: black;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline;
+            font-size: 20px;
+            margin: 25px 2px;
+            cursor: pointer;
+            border-radius: 15px;
+            transition-duration: 0.4s;
+        }
+
+        .generate-button:hover {
+            background-color: #f5aa28;
+            opacity: 0.7;
+        }
+        .content{
+            background-color: #f5aa28; /* Background color */
+            opacity: 0.8;
+            color: black;
+            border-radius: 15px; /* Rounded corners */
+            margin: 30px; /* Margin */
+            padding: 40px; /* Padding */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: disc; /* or circle */
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="background"></div>
+
+    {% comment %} NAVBAR {% endcomment %}
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">MEAL-CRAFT</div>
+    
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+    
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+    
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="logout">Logout</a></li>
+            {% else %}
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signin.html">Signin</a></li>
+            {% endif %}
+          </div>
+        </ul>
+    </nav>
+
+    <div class="random-recipes">
+        <h1 style="color: white;">Get Random Recipes!</h1>
+        <button class="generate-button" onclick="window.location.href='random-recipe.html'">Generate</button>
+    </div>
+
+    <div class="content">
+        <h1 style="text-decoration: underline;">{{ recipe_title }}</h1>
+        <br>
+        <h3>Ingredients:</h3>
+        <ul>
+            {% for ingredient in ingredients %}
+                <li>{{ ingredient }}</li>
+            {% endfor %}
+        </ul>
+        <br>
+        <h3>Instructions:</h3>
+        <ol>
+            {% for step in instructions %}
+                <li>{{ step }}</li><br>
+            {% endfor %}
+        </ol>
+        <!-- <p>Source: <a href="{{ source_url }}">{{ source_url }}</a></p> -->
+    </div>
+</body>
+</html>

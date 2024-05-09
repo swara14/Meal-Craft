@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 40px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            background-color: #f5aa28;
+            opacity: 0.7;
+        }
+        th {
+            background-color: #78c0a8;
+        }
+
+         {% comment %} NAVBAR {% endcomment %}
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+        font-family: cursive;
+        background-color: #313131;
+        }
+
+        a {
+        text-decoration: none;
+        color: black;
+        }
+
+        li {
+        list-style: none;
+        }
+
+        /* NAVBAR STYLING STARTS */
+        .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #78c0a8;
+        color: #313131;
+        }
+
+        .nav-links a {
+        color: #313131;
+        }
+
+        /* LOGO */
+        .logo {
+        font-size: 25px;
+        }
+
+        /* NAVBAR MENU */
+        .menu {
+        display: flex;
+        gap: 2em;
+        font-size: 18px;
+        }
+        h1{
+            color: white;
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+        .button-container1 {
+            margin-top: 10px;
+            margin-right: 10px; 
+        }
+        .button-container1 button {
+            margin-left: 40px;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: #f5aa28;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="background"></div>
+
+    {% comment %} NAVBAR {% endcomment %}
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">MealCraft</div>
+    
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+    
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+    
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="logout">Logout</a></li>
+            {% else %}
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signin.html">Signin</a></li>
+            {% endif %}
+          </div>
+        </ul>
+    </nav>
+    <h1>Search Results</h1>
+    <div class="button-container1">
+        <button><a href="recipeid.html" style="text-decoration: none;">Search Recipes</a></button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Recipe ID</th>
+                <th>Recipe Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipes %}
+                <tr>
+                    <td>{{ recipe.id }}</td>
+                    <td>{{ recipe.title }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

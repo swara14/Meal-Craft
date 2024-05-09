@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealCraft</title>
+
+    <style>
+
+        {% comment %} NAVBAR {% endcomment %}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+        font-family: cursive;
+        background-color: #313131;
+        }
+
+        a {
+        text-decoration: none;
+        }
+
+        li {
+        list-style: none;
+        }
+
+        /* NAVBAR STYLING STARTS */
+        .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #78c0a8;
+        color: #313131;
+        }
+
+        .nav-links a {
+        color: #313131;
+        }
+
+        /* LOGO */
+        .logo {
+        font-size: 25px;
+        }
+
+        /* NAVBAR MENU */
+        .menu {
+        display: flex;
+        gap: 2em;
+        font-size: 18px;
+        }
+
+        .welcome{
+            color: white;
+        }
+
+        /* Styling for random-recipes */
+        .random-recipes {
+            background-color: #f5aa28; /* Background color */
+            opacity: 1;
+            border-radius: 15px; /* Rounded corners */
+            margin: 60px; /* Margin */
+            padding: 40px; /* Padding */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        /* Hover effect */
+        .random-recipes:hover {
+            background-color: #f5aa28; /* Change background color on hover */
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="background"></div>
+
+    {% comment %} NAVBAR {% endcomment %}
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">MEAL-CRAFT</div>
+    
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+    
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+    
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="logout">Logout</a></li>
+            {% else %}
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signin.html">Signin</a></li>
+            {% endif %}
+          </div>
+        </ul>
+    </nav>
+
+    {% if user.is_authenticated %}
+        <h1 class="welcome" style="margin: 20px;">Welcome {{ user.username }} !</h1>
+    {% else %}
+        <h1 class="welcome" style="margin: 20px;">You are not logged in ! </h1>
+    {% endif %}
+
+    <div class="random-recipes" onclick="window.location.href='random-recipe.html'">
+        <h2>Generate Random Recipes!</h2>
+        <p>Get ready to tantalize your taste buds with a world of culinary delights. </p>
+           <p>With just a click, explore a vast array of randomly generated recipes to inspire your next 
+            culinary adventure. From savory mains to delectable desserts, it offers an endless 
+            stream of flavorful creations to suit every palate. Let the culinary journey begin!</p>
+    </div>
+
+    <div class="random-recipes" onclick="window.location.href='search.html'">
+      <h2>What's in your Fridge Today?</h2>
+      <p>Take control of your meals by simply inputting the ingredients you have on hand.</p> 
+        <p>Whether it's a handful of veggies, a selection of meats, or a mix of pantry staples, 
+        our recipe generator will work its magic to curate a personalized list of mouthwatering recipes 
+        just for you.</p>
+  </div>
+
+    <script src="userproject/static/script.js"></script>
+</body>
+</html>

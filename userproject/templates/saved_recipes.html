@@ -1,0 +1,38 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags, title, and styles -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <!-- Your navbar content -->
+    </nav>
+
+    <!-- Page title -->
+    <h1>Search Results</h1>
+
+    <!-- Button to search for recipes -->
+    <div class="button-container1">
+        <button><a href="recipeid.html" style="text-decoration: none;">Search Recipes</a></button>
+    </div>
+
+    <!-- Display saved recipes -->
+    <table>
+        <thead>
+            <tr>
+                <th>Recipe ID</th>
+                <th>Recipe Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipes %}
+                <tr>
+                    <td>{{ recipe.id }}</td>
+                    <td>{{ recipe.title }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html> {% endcomment %}
