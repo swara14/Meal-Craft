@@ -115,7 +115,7 @@
             <!-- NAVIGATION MENUS -->
             <div class="menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Contact</a></li>
+                {% comment %} <li><a href="#">Contact</a></li> {% endcomment %}
                 {% if user.is_authenticated %}
                 <li><a href="logout">Logout</a></li>
             {% else %}
