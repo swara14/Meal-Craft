@@ -85,25 +85,25 @@ def select_ingredients(request):
     
     return render(request, 'search.html')
 
-# def recipe_detail(request, recipe_id):
-#     api_key = 'c4b21d87d23543f0b7aa54686bd93809'
-#     url = f'https://api.spoonacular.com/recipes/{recipe_id}/information?apiKey={api_key}'
+def recipe_detail(request, recipe_id):
+    api_key = 'c4b21d87d23543f0b7aa54686bd93809'
+    url = f'https://api.spoonacular.com/recipes/{recipe_id}/information?apiKey={api_key}'
 
-#     response = requests.get(url)
-#     data = response.json()
+    response = requests.get(url)
+    data = response.json()
 
-#     context = {
-#         'recipe_id': data['id'],
-#         'recipe_name': data['title'],
-#         'image': data['image'],
-#         'servings': data['servings'],
-#         'ready_in_minutes': data['readyInMinutes'],
-#         'dish_type': ', '.join(data['dishTypes']),
-#         'ingredients': data['extendedIngredients'],
-#         'instructions': data['instructions']
-#     }
+    context = {
+        'recipe_id': data['id'],
+        'recipe_name': data['title'],
+        'image': data['image'],
+        'servings': data['servings'],
+        'ready_in_minutes': data['readyInMinutes'],
+        'dish_type': ', '.join(data['dishTypes']),
+        'ingredients': data['extendedIngredients'],
+        'instructions': data['instructions']
+    }
 
-#     return render(request, 'recipe_detail.html', context)
+    return render(request, 'recipe_detail.html', context)
 
 # @login_required
 # def save_recipes(request, recipe_id):
