@@ -1,3 +1,16 @@
 userproject\home\__pycache__
 userproject\home\migrations\__pycache__
 userproject\userproject\__pycache__
+userproject/userproject/__pycache__/wsgi.cpython-38.pyc
+userproject/userproject/__pycache__/urls.cpython-38.pyc
+userproject/userproject/__pycache__/settings.cpython-38.pyc
+userproject/userproject/__pycache__/__init__.cpython-38.pyc
+userproject/home/migrations/__pycache__/__init__.cpython-38.pyc
+userproject/home/__pycache__/views.cpython-38.pyc
+userproject/home/__pycache__/urls.cpython-38.pyc
+userproject/home/__pycache__/models.cpython-38.pyc
+userproject/home/__pycache__/forms.cpython-38.pyc
+userproject/home/__pycache__/apps.cpython-38.pyc
+userproject/home/__pycache__/admin.cpython-38.pyc
+userproject/home/__pycache__/__init__.cpython-38.pyc
+userproject/db.sqlite3
