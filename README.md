@@ -1,18 +1,18 @@
 # Meal Craft
 
-Meal Craft is a web application that allows users to fetch and display Meals for a the given ingredients. The app utilizes the <a href="https://spoonacular.com/food-api">spoonacular API</a> to display the meals which can ve made with the given ingredients.
+Meal Craft is a web application that allows users to fetch and display recipes for the given ingredients. The app utilizes the <a href="https://spoonacular.com/food-api">spoonacular API</a> to display the meals which can be made with the given ingredients.
+It can also generate random recipes for the user to prepare.
 
 <!-- Check it out at <a href="https://vikranth3140.pythonanywhere.com/">vikranth3140.pythonanywhere.com</a> -->
 
 
 ## Features
 
-- Enter the ingredients and get the meals that can be made.
-- Randomised Meals can also be selected.
+- See the recipes based on the ingredients in your fridge.
+- Generate random recipes for you to prepare.
 
 
 ## File Structure
-   <!-- Fix this -->
     userproject/
     │
     ├── home/                  # Home application directory
@@ -78,26 +78,27 @@ Meal Craft is a web application that allows users to fetch and display Meals for
 2. **API Configuration:**
    - Obtain your API key from [SerpApi](https://spoonacular.com/).
 
-   <!-- Fix this -->
-   - Replace `SERPAPI_KEY` in `config.py` your actual key.
+   - Replace `api_key` in `userproject\home\views.py` your actual key.
 
 3. **Run the Application:**
 
-   <!-- Fix this -->
-   - Execute the Python app
+   - Execute the Python application.
 
-    ```bash
-    python run main.py
-    ```
+        ```bash
+        python manage.py runserver
+        ```
 
-   - Enter the desired scholor's name.
-
-4. **View Results:**
-   - Open the app in your web browser.
+    - Open the app in your web browser.
 
         [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
-   - The application will display real-time research paper information and the corresponding paper links.
+
+4. **Use the Application**
+
+    - Sign Up & Login into application.
+    - Hover to `Generate Random Recipes` and click `Generate` to generate Random yummy recipes.
+    - Hover to `What's in your Fridge Today?` and enter the ingredients available and then search to see the recipes based on the ingredients in your fridge.
+
 
 ## Note
 
