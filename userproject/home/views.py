@@ -75,6 +75,8 @@ def select_ingredients(request):
     if request.method == 'POST':
         ingredients = request.POST.get('ingredients')
         ingredients = ','.join(ingredients.split())  # Convert spaces to commas
+
+        # Replace it with your API Key
         api_key = 'c4b21d87d23543f0b7aa54686bd93809'
         url = f'https://api.spoonacular.com/recipes/findByIngredients?apiKey={api_key}&ingredients={ingredients}&number=15'
         
