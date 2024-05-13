@@ -1,5 +1,5 @@
 # Meal-Craft
-# Meal Craft
+
 
 Meal Craft is a web application that allows users to fetch and display Meals for a the given ingredients. The app utilizes the <a href="https://spoonacular.com/food-api">spoonacular API</a> to display the meals which can ve made with the given ingredients.
 
