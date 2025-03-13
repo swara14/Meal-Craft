@@ -100,25 +100,6 @@ Meal Craft is a web application that allows users to fetch and display Meals for
 
    - The application will display real-time research paper information and the corresponding paper links.
 
-## Note
-
-- Keep your API keys confidential and do not share them publicly.
-- Ensure an active internet connection for accurate data retrieval.
-
-
-## Contributing
-
-Welcome to contribute to Scholar H-Index App! Feel free to fork the repository and suggest any improvements. To contribute, follow these steps:
-
-1.  Fork the repository.
-2.  Create a new branch for your feature or bug fix.
-3.  Make your changes and commit them.
-4.  Push the changes to your fork.
-5.  Submit a pull request.
-
-Thank you for your contributions!
-
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
